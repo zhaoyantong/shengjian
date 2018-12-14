@@ -1,0 +1,80 @@
+.maxtop{
+	width: 100%;
+	border-top: 2px solid #b61b21;
+}
+.maxtop .top{
+	width: 1289px;
+	margin: 0 auto;
+}
+.maxtop .top h1{
+	width: 408px;
+	margin-right: 44px;
+	padding: 55px 0 15px 0;
+	float: left;
+}
+.maxtop .top h1 img{
+	display: block;
+	float: left;
+}
+.maxtop .top h1 img:first-child{
+	margin-right: 13px;
+}
+.maxtop .top ul{
+	width: 719px;
+	float: left;
+	padding: 59px 0 39px 0;
+	margin-right: 10px;
+}
+.maxtop .top ul li{
+	width: 92px;
+	height: 14px;
+	line-height: 14px;
+	float: left;
+	font-size: 14px;
+	border-right: 1px solid #c9c9c9;
+	text-align: center;
+}
+.maxtop .top ul li a{
+	color: #343434;
+}
+.maxtop .top>img{
+	display: block;
+	float: left;
+	margin-top: 2px;
+}
+.maxbottom{
+	width: 100%;
+	background: url(../images/bottom_3.gif) repeat-x;
+}
+.maxbottom .bottom{
+	width: 1289px;
+	margin: 0 auto;
+	position: relative;
+}
+.maxbottom .bottom .left{
+	width: 782px;
+	height: 12px;
+	line-height: 12px;
+	font-size: 12px;
+	padding: 59px 90px 20px 90px;
+	float: left;
+}
+.maxbottom .bottom .right{
+	width: 121px;
+	margin-left:54px ;
+	float: left;
+	padding-top: 18px;
+	font-size: 12px;
+}
+.maxbottom .bottom img:nth-of-type(1){
+	display: block;
+	position: absolute;
+	left: 870px;
+	top: 25px;
+}
+.maxbottom .bottom img:nth-of-type(2){
+	display: block;
+	position: absolute;
+	left: 1075px;
+	top: 77px;
+}

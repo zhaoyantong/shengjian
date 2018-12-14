@@ -1,0 +1,23 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.clear{
+	height: 0;
+	line-height: 0;
+	clear: both;
+}
+ul,li,p,dd,dt,h1,h2,h3,dl,dt,dd,label,form{
+	display: block;
+}
+ul{
+	list-style: none;
+}
+.ellipsis{
+				white-space: nowrap;/*空白不换行*/
+				overflow: hidden;/*溢出隐藏*/
+				text-overflow: ellipsis;/*显示省略号*/
+}
+a{
+	text-decoration: none;
+}

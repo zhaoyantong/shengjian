@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/style1.css" />
+		<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="js/lubotu.js"></script>
+		<script type="text/javascript" src="js/tabChange.js"></script>
+		<link href="css/lrtk.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/lrtk.js"></script>
+		<script>
+			window.onload = function() {
+				var oBox = document.getElementById('left1-left');
+				var oPrev = getByClass(oBox, 'prev')[0];
+				var oNext = getByClass(oBox, 'next')[0];
+				var oBigUl = getByClass(oBox, 'bigUl')[0];
+				var aLiBig = oBigUl.getElementsByTagName('li');
+				var oNumUl = getByClass(oBox, 'numberUl')[0];
+				var aLiNumber = oNumUl.getElementsByTagName('li');
+				var oTextUl = getByClass(oBox, 'textUl')[0];
+				var aLiText = oTextUl.getElementsByTagName('li');
+				var nowZindex = 1;
+				var now = 0;
+
+				function tab() {
+					for(var i = 0; i < aLiNumber.length; i++) {
+						aLiNumber[i].className = '';
+					}
+					aLiNumber[now].className = 'night';
+
+					aLiBig[now].style.zIndex = nowZindex++;
+					aLiBig[now].style.opacity = 0;
+					startMove(aLiBig[now], 'opacity', 100);
+					for(var i = 0; i < aLiText.length; i++) {
+						aLiText[i].style.display = 'none';
+					}
+					aLiText[now].style.display = 'block'
+
+				}
+
+				for(var i = 0; i < aLiNumber.length; i++) {
+					aLiNumber[i].index = i;
+					aLiNumber[i].onclick = function() {
+
+						if(this.index == now) return;
+						now = this.index;
+
+						tab();
+					}
+				}
+				oNext.onmouseover = oPrev.onmouseover = oBigUl.onmouseover = function() {
+					startMove(oPrev, 'opacity', 100);
+					startMove(oNext, 'opacity', 100)
+				}
+				oNext.onmouseout = oPrev.onmouseout = oBigUl.onmouseout = function() {
+					startMove(oPrev, 'opacity', 0);
+					startMove(oNext, 'opacity', 0)
+				}
+				oPrev.onclick = function() {
+					now--
+					if(now == -1) {
+						now = aLiNumber.length - 1;
+					}
+					tab();
+				}
+
+				oNext.onclick = function() {
+					now++
+					if(now == aLiNumber.length) {
+						now = 0;
+					}
+					tab();
+				}
+
+				var timer = setInterval(oNext.onclick, 3000)
+				oBox.onmouseover = function() {
+					clearInterval(timer)
+				}
+				oBox.onmouseout = function() {
+					timer = setInterval(oNext.onclick, 3000) //改变速度修改3000 ，例如3000=3秒钟
+				}
+			}
+		</script>
+		<base target="_blank" />
+	</head>
+
+	<body>
+		<div class="maxtop">
+			<div class="top">
+				<h1>
+					<img src="images/top_01.gif"/>
+					<img src="images/top_02.gif"/>
+					<div class="clear"></div>
+				</h1>
+				<ul>
+					<li style="width: 66px;">
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="about1/index.html">关于省建</a>
+					</li>
+					<li>
+						<a href="about2/index.html">旗下产业</a>
+					</li>
+					<li>
+						<a href="about3/index.html">新闻中心</a>
+					</li>
+					<li>
+						<a href="about4/index.html">企业文化</a>
+					</li>
+					<li>
+						<a href="about5/index.html">人力资源</a>
+					</li>
+					<li>
+						<a href="about6/index.html">联系我们</a>
+					</li>
+					<li style="border: 0;">
+						<a href="#">ENGLISH</a>
+					</li>
+					<div class="clear"></div>
+				</ul>
+				<img src="images/top_03.gif" />
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="lubo">
+			<ul class="lubo_box">
+				<li style="opacity: 1;filter:alpha(opacity=100);">
+					<a href="#" style="background:url(images/1_02.jpg) center top no-repeat"></a>
+				</li>
+				<li>
+					<a href="#" style="background:url(images/2.jpeg) center top no-repeat"></a>
+				</li>
+				<li>
+					<a href="#" style="background:url(images/3.jpeg) center top no-repeat"></a>
+				</li>
+				<li>
+					<a href="#" style="background:url(images/4.jpeg) center top no-repeat"></a>
+				</li>
+				<li>
+					<a href="#" style="background:url(images/5.jpeg) center top no-repeat"></a>
+				</li>
+				<li>
+					<a href="#" style="background:url(images/1.jpeg) center top no-repeat"></a>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				$(".lubo").lubo({});
+			})
+		</script>
+		<div class="bottom">
+			<div class="left">
+				<div class="left1">
+					<div id="left1-left">
+						<div class="prev"></div>
+						<div class="next"></div>
+						<ul class="bigUl">
+							<li style="z-index:1">
+								<a href="#"><img src="images/1_06.jpg" alt="图1" style="width:273px; height:198px;" /></a>
+							</li>
+							<li>
+								<a href="#"><img src="images/1.jpg" alt="图2" style="width:273px; height:198px;" /></a>
+							</li>
+							<li>
+								<a href="#"><img src="images/3.jpg" alt="图3" style="width:273px; height:198px;" /></a>
+							</li>
+							<li>
+								<a href="#"><img src="images/4.jpg" alt="图4" style="width:273px; height:198px;" /></a>
+							</li>
+							<li>
+								<a href="#"><img src="images/1_06.jpg" alt="图1" style="width:273px; height:198px;" /></a>
+							</li>
+							<li>
+								<a href="#"><img src="images/1.jpg" alt="图2" style="width:273px; height:198px;" /></a>
+							</li>
+							<li>
+								<a href="#"><img src="images/3.jpg" alt="图3" style="width:273px; height:198px;" /></a>
+							</li>
+							<li>
+								<a href="#"><img src="images/4.jpg" alt="图4" style="width:273px; height:198px;" /></a>
+							</li>
+						</ul>
+						<ul class="numberUl">
+							<li class="night">
+								<a href="javascript:;">1</a>
+							</li>
+							<li>
+								<a href="javascript:;">2</a>
+							</li>
+							<li>
+								<a href="javascript:;">3</a>
+							</li>
+							<li>
+								<a href="javascript:;">4</a>
+							</li>
+							<li>
+								<a href="javascript:;">5</a>
+							</li>
+							<li>
+								<a href="javascript:;">6</a>
+							</li>
+							<li>
+								<a href="javascript:;">7</a>
+							</li>
+							<li>
+								<a href="javascript:;">8</a>
+							</li>
+						</ul>
+						<div>
+							<ul class="textUl">
+								<li style="display:block;">
+									<a href="#">江苏省建第三层级管理人员首期培训班在</a>
+								</li>
+								<li>
+									<a href="#">锂电池是亮点 米儿低速电动车设计解读</a>
+								</li>
+								<li>
+									<a href="#">舒适及操控更上一层楼 测试长安金欧诺</a>
+								</li>
+								<li>
+									<a href="#">外观动感/配置丰富 天籁2.0L用车记</a>
+								</li>
+								<li>
+									<a href="#">走到哪都信心十足 普拉多用车心得</a>
+								</li>
+								<li>
+									<a href="#">全新东风标致508 驾乘尽享的中高级杰座</a>
+								</li>
+								<li>
+									<a href="#">C4L 动力快人一步礼遇更胜一筹</a>
+								</li>
+								<li>
+									<a href="#">全新东风标致508 驾乘尽享的中高级杰座</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="left1-right" style="height: 263px; overflow:hidden;">
+						<ul id="list">
+							<li class="active">集团要闻</li>
+							<li>行业资讯</li>
+							<a href="#" class="two">更多>></a>
+						</ul>
+						<div class="content" id="content">
+							<div class="top">
+								<ul>
+									<li style="border-top:1px solid #e0e0e0;">
+										<a href="#">集团领导赴绿地集团华中事业部对接交流</a> <span>2018-08-17</span></li>
+									<li>
+										<a href="#">陈正华董事长会见江西万载县曾文军县长一行...</a> <span>2018-08-11</span></li>
+									<li>
+										<a href="#">同力建设集团中标南京江北新区6.6亿元市政道...</a> <span>2018-08-09</span></li>
+									<li>
+										<a href="#">江苏省建集团与香港新昌集团举行战略合作协...</a> <span>2018-08-08</span></li>
+									<li>
+										<a href="#">集团董事长陈正华拜会中国驻朝鲜大使李进军...</a> <span>2018-08-08</span></li>
+									<li>
+										<a href="#">东南大学黄大卫副校长来集团座谈交流</a> <span>2018-08-04</span></li>
+									<li>
+										<a href="#">国家发改委“一带一路”经贸访华团调研会在江...</a> <span>2018-07-30</span></li>
+									<li>
+										<a href="#">集团领导赴南京港港务工程公司考察调研</a> <span>2018-07-28</span></li>
+
+								</ul>
+							</div>
+							<div class="top">
+								<ul>
+									<li>
+										<a href="#">浅谈韩国大厂对腾讯视频的依赖</a> <span>2018-08-17</span></li>
+									<li>
+										<a href="#">福建平潭彩民领大乐透1407万</a> <span>2018-08-11</span></li>
+									<li>
+										<a href="#">同力建设集团中标南京江北新区6.6亿元市政道...</a> <span>2018-08-09</span></li>
+									<li>
+										<a href="#">江苏省建集团与香港新昌集团举行战略合作协...</a> <span>2018-08-08</span></li>
+									<li>
+										<a href="#">集团董事长陈正华拜会中国驻朝鲜大使李进军...</a> <span>2018-08-08</span></li>
+									<li>
+										<a href="#">东南大学黄大卫副校长来集团座谈交流</a> <span>2018-08-04</span></li>
+									<li>
+										<a href="#">国家发改委“一带一路”经贸访华团调研会在江...</a> <span>2018-07-30</span></li>
+									<li>
+										<a href="#">集团领导赴南京港港务工程公司考察调研</a> <span>2018-07-28</span></li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="left2">
+					<h2>经典工程&nbsp;&nbsp;<span>PROJECTS</span></h2>
+					<a href="#">更多>></a>
+					<div class="clear"></div>
+					<SCRIPT>
+						var dir = 1; //每步移动像素，大＝快
+						var speed = 10; //循环周期（毫秒）大＝慢
+						var MyMar = null;
+
+						function Marquee() { //正常移动
+							var demo = document.getElementById("demo");
+							var demo2 = document.getElementById("demo2");
+							if(dir > 0 && (demo2.offsetWidth - demo.scrollLeft) <= 0) {
+								demo.scrollLeft = 0;
+							}
+							if(dir < 0 && (demo.scrollLeft <= 0)) {
+								demo.scrollLeft = demo2.offsetWidth;
+							}
+							demo.scrollLeft += dir;
+						}
+
+						function onmouseoverMy() {
+							window.clearInterval(MyMar);
+						} //暂停移动
+						function onmouseoutMy() {
+							MyMar = setInterval(Marquee, speed);
+						} //继续移动
+						function r_left() {
+							if(dir == -1)
+								dir = 1;
+						} //换向左移
+						function r_right() {
+							if(dir == 1)
+								dir = -1;
+						} //换向右移
+
+						function IsIE() {
+							var browser = navigator.appName
+							if((browser == "Netscape")) {
+								return false;
+							} else if(browser == "Microsoft Internet Explorer") {
+								return true;
+							} else {
+								return null;
+							}
+						}
+
+						var _IsIE = IsIE();
+						var _MousePX = 0;
+						var _MousePY = 0;
+						var _DivLeft = 0;
+						var _DivRight = 0;
+						var _AllDivWidth = 0;
+						var _AllDivHeight = 0;
+
+						function MoveDiv(e) {
+							var obj = document.getElementById("demo");
+							_MousePX = _IsIE ? (document.body.scrollLeft + event.clientX) : e.pageX;
+							_MousePY = _IsIE ? (document.body.scrollTop + event.clientY) : e.pageY;
+							//Opera Browser Can Support ''window.event'' and ''e.pageX''
+							var obj1 = null;
+							if(obj.getBoundingClientRect) {
+								//IE
+								obj1 = document.getElementById("demo").getBoundingClientRect();
+								_DivLeft = obj1.left;
+								_DivRight = obj1.right;
+								_AllDivWidth = _DivRight - _DivLeft;
+							} else if(document.getBoxObjectFor) {
+								//FireFox
+								obj1 = document.getBoxObjectFor(obj);
+								var borderwidth = (obj.style.borderLeftWidth != null && obj.style.borderLeftWidth != "") ? parseInt(obj.style.borderLeftWidth) : 0;
+								_DivLeft = parseInt(obj1.x) - parseInt(borderwidth);
+								_AllDivWidth = Cut_Px(obj.style.width);
+								_DivRight = _DivLeft + _AllDivWidth;
+							} else {
+								//Other Browser(Opera)
+								_DivLeft = obj.offsetLeft;
+								_AllDivWidth = Cut_Px(obj.style.width);
+								var parent = obj.offsetParent;
+								if(parent != obj) {
+									while(parent) {
+										_DivLeft += parent.offsetLeft;
+										parent = parent.offsetParent;
+									}
+								}
+								_DivRight = _DivLeft + _AllDivWidth;
+							}
+
+							var pos1, pos2;
+							pos1 = parseInt(_AllDivWidth * 0.4) + _DivLeft;
+							pos2 = parseInt(_AllDivWidth * 0.6) + _DivLeft;
+
+							if(_MousePX > _DivLeft && _MousePX < _DivRight) {
+								if(_MousePX > _DivLeft && _MousePX < pos1) //Move left
+								{
+									r_left();
+								} else if(_MousePX < _DivRight && _MousePX > pos2) //Move right
+								{
+									r_right();
+								}
+
+								if(_MousePX > pos1 && _MousePX < pos2) //Stop
+								{
+									onmouseoverMy();
+									MyMar = null;
+								} else if(_MousePX < pos1 || _MousePX > pos2) {
+									if(MyMar == null) {
+										MyMar = setInterval(Marquee, speed);
+									}
+								}
+							}
+						}
+
+						function Cut_Px(cswidth) {
+							cswidth = cswidth.toLowerCase();
+							if(cswidth.indexOf("px") != -1) {
+								cswidth.replace("px", "");
+								cswidth = parseInt(cswidth);
+							}
+							return cswidth;
+						}
+
+						function MoveOutDiv() {
+							if(MyMar == null) {
+								MyMar = setInterval(Marquee, speed);
+							}
+						}
+						var ul = document.getElementById("list");
+						var li = ul.getElementsByTagName("li");
+						var content = document.getElementById("content"); //content存放内容的大DIV
+						var div = content.getElementsByClassName("top"); //从content中获取div
+						for(var i = 0; i < li.length; i++) {
+							li[i].index = i; //设置索引值
+							li[i].onclick = function() {
+								for(var j = 0; j < li.length; j++) {
+									li[j].className = "normal";
+									div[j].style.display = "none";
+								}
+								li[this.index].className = "active";
+								div[this.index].style.display = "block";
+							}
+						}
+					</SCRIPT>
+					<DIV id="demo" style="OVERFLOW: hidden; WIDTH: 678px;  COLOR: #ffffff; HEIGHT: 178px" onmousemove="MoveDiv(event);" onmouseout="MoveOutDiv();">
+						<div id="demo1" style="width:100%;">
+							<TABLE cellSpacing=0 cellPadding=0>
+								<TBODY>
+									<TR vAlign=top>
+										<TD vAlign=top noWrap>
+											<DIV align=right>
+												<p><img src="images/1_17.jpg" /><span>徐州翡翠城</span></p>
+												<p><img src="images/1_19.jpg" /><span>南京艾菲国际</span></p>
+												<p><img src="images/1_17.jpg" /><span>徐州翡翠城</span></p>
+												<p><img src="images/1_19.jpg" /><span>南京艾菲国际</span></p>
+											</DIV>
+										</TD>
+									</TR>
+								</TBODY>
+							</TABLE>
+							</TD>
+							<TD width="0">
+								<div id="demo2" style="width:100%;"></div>
+							</TD>
+							</TR>
+							</TBODY>
+							</TABLE>
+						</DIV>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="left3">
+					<form action="post">
+						<p>
+							<input type="text" id="one" value="政府及行业网站" onfocus="this.value=''" />
+							<label for="one"><img src="images/1_51.jpg" style="padding-top:10px; padding-left:5px;" /></label>
+						</p>
+						<p>
+							<input type="text" id="two" value="绿地集团网站" onfocus="this.value=''" />
+							<label for="two"><img src="images/1_51.jpg" style="padding-top:10px; padding-left:5px;" /></label>
+						</p>
+						<p>
+							<input type="text" id="three" value="集团成员企业网站" onfocus="this.value=''" />
+							<label for="three"><img src="images/1_51.jpg" style="padding-top:10px; padding-left:5px;" /></label>
+						</p>
+						<div class="clear"></div>
+					</form>
+				</div>
+			</div>
+			<div class="right">
+				<div class="right1" style="border-top:3px solid #83373b;">
+					<h2>集团公告 <span>PLACARD</span></h2>
+					<a href="#">关于更新集团通讯录的通知</a>
+				</div>
+				<div class="right2">
+					<h2>集团视频 <span>VIDEOS</span></h2>
+					<img src="images/1_09.jpg" />
+				</div>
+				<div class="right3">
+					<div class="right3-left">
+						<img src="images/1_27.jpg" />
+						<p>《江苏省建》电子版</p>
+					</div>
+					<div class="right3-right">
+						<p>
+							<a href="#">信息化平台</a>
+						</p>
+						<p>
+							<a href="#">集中采购平台</a>
+						</p>
+						<p>
+							<a href="#">企业邮箱</a>
+						</p>
+						<p>
+							<a href="#">下载中心</a>
+						</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="right4">
+					<form method="post">
+						<p>
+							<input type="text" id="four" />
+							<label for="four"><img src="images/1_49.jpg" align="center" /></label>
+						</p>
+					</form>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+		<div class="maxbottom">
+			<div class="bottom">
+				<div class="left">
+					Copyright&nbsp;&copy;2008-2016 江苏省建筑工程集团有限公司 地址：江苏省南京市云龙山路99号省建大厦 电话：025-83433587 传真：025-83478223
+				</div>
+				<img src="images/bottom.gif" />
+				<div class="right">
+					苏ICP备11086906号
+				</div><img src="images/bottom_1.gif" />
+			</div>
+
+			<div class="clear"></div>
+		</div>
+
+	</body>
+
+</html>

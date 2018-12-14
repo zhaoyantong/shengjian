@@ -1,0 +1,119 @@
+
+a{
+	text-decoration:none;
+}
+.pic img{
+	width:100%;
+	margin-bottom:40px;
+	position:relative;
+}
+.pic p{
+	position:absolute;
+	left:260px;
+	top:223px;
+	font-size:30px;
+	color:#bd121a;
+	font-weight:bold;
+}
+.pic span{
+	font-size:14px;
+	color:#46494e;
+	font-weight:bold;
+	padding-left:10px;                                                                                        
+}
+.main{
+	width:990px;
+	margin:0 auto;
+	margin-bottom:29px;
+}
+.main .left{
+	width:175px;
+	float:left;
+	margin-right:23px;
+	height:502px;
+	border:1px solid #dfdfdf;
+}
+.main .left h3{
+	font-size:17px;
+	height:41px;
+	line-height: 41px;
+	padding-left:13px;
+	color:#5a5a5a;
+	font-weight:bold;
+	width:171px;
+	background:url(../images/images-99_03.jpg)repeat-x;
+}
+.main .left h3 span{
+	display: block;
+	width: 162px;
+	border-right: 1px solid #dfdfdf;
+}
+.main .left ul li{
+	margin-left:21px;
+	margin-right:9px;
+}
+.main .left ul li{
+	padding-top:5px;
+	height:26px;
+	line-height:26px;
+	padding-bottom:5px;
+	border-bottom:1px dotted #9d9d9d;
+	position: relative;
+}
+.main .left ul li a{
+	font-size:12px;
+	display:block;
+	color:#898989;
+	font-weight:bold;
+	background:url(../images/images_06_14.jpg) no-repeat 7px center;
+	text-indent:24px;
+}
+.main .left ul li a:hover{
+	color:#ffeeeb;
+	background:url(../images/images_06_10.jpg) no-repeat 160px center, url(../images/images_06_07.jpg) no-repeat 13px center  #ba1a22;
+	width:170px;
+	text-indent:31px;
+	position: absolute;
+	left: -7px;
+	top: 6px;
+}
+.main .left ul li .red{
+	color:#ffeeeb;
+	background:url(../images/images_06_10.jpg) no-repeat 160px center, url(../images/images_06_07.jpg) no-repeat 13px center  #ba1a22;
+	width:170px;
+	text-indent:31px;
+	position: absolute;
+	left: -7px;
+	top: 6px;
+}
+.main .right{
+	width:790px;
+	float:left;
+}
+.main .right h3{
+	height:42px;
+	font-size:16px;
+	width:570px;
+	float:left;
+}
+.main .right-up p{
+	font-size:12px;
+	float:left;
+	width:220px;
+}
+.main .right-up p a{
+	color:#000000;
+}
+.main .right-up{
+	margin-bottom:30px;
+}
+.main .right-down p{
+	text-indent:23px;
+	line-height:22px;
+	font-size:11px;
+	padding-left:32px;
+	padding-right:69px;
+}
+.main .right-up{
+	background:url(../images/images-99_03.jpg)repeat-x;
+}

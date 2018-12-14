@@ -1,0 +1,21 @@
+
+.potos img{ width: 100%; margin-bottom: 40px;}
+.main{width:990px; margin: 0 auto;}
+
+
+
+
+.main .leftdt{width: 175px; background: url(../images/wen_07.jpg) no-repeat left:2px:top:20px; height: 569px; border: 1px solid #e2e2e2; margin-right: 23px; float: left; position: relative; }
+.main .leftdt h3{height:41px; line-height: 41px; font-size: 17px; text-align: center; position: absolute; left:18px; top:-2px; color: #696969;}
+.main .leftdt li{ background:url(../images/wenhua_22.jpg) no-repeat 5px 16px;position: relative; height:27px; width: 145px; margin-left:20px; padding: 6px 0; line-height:27px; border-bottom: 1px dashed #a39f9c;}
+.main .leftdt li a{ font-size: 12px;  position: absolute; left: -7px; color:#8a8a8a;  display: block;  text-indent: 30px;height:27px; line-height:27px;  }
+.main .leftdt li img{float: left;}
+
+.main .leftdt li:nth-of-type(3) a{background:url(../images/wenhua_11.jpg) no-repeat 10px 10px,url(../images/wenhua_14.jpg) no-repeat 160px 10px #b61d22; color: white; width: 173px; }
+.main .leftdt li:hover a{background:url(../images/wenhua_11.jpg) no-repeat 10px 10px,url(../images/wenhua_14.jpg) no-repeat 160px 10px #b61d22; color: white; width: 173px;}
+
+.rightdt{width: 790px;float: left;}
+.rightdt .top{height:43px; background:url(../images/wenhua_06_03.jpg) repeat-x; margin-bottom: 41px;}
+.rightdt .top h4{ font-size: 15px; float: left;}
+.rightdt .top p{font-size: 12px; float: right;}
+.rightdt img{margin-left:30px;}

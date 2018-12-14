@@ -1,0 +1,118 @@
+
+a{
+	text-decoration:none;
+}
+.topz img{
+	width:100%;
+	margin-bottom:40px;
+	position:relative;
+}
+.topz p{
+	position:absolute;
+	left:260px;
+	top:223px;
+	font-size:30px;
+	color:#bd121a;
+	font-weight:bold;
+}
+.topz span{
+	font-size:14px;
+	color:#46494e;
+	font-weight:bold;
+	padding-left:10px;                                                                                        
+}
+.nav{
+	width:990px;
+	margin:0 auto;
+	margin-bottom:29px;
+}
+.nav .left{
+	width:175px;
+	float:left;
+	margin-right:23px;
+	height:700px;
+	border:1px solid #dfdfdf;
+}
+.nav .left h3{
+	width:179px;
+	font-size:17px;
+	height:41px;
+	line-height: 41px;
+	padding-left:13px;
+	color:#5a5a5a;
+	font-weight:bold;
+}
+.nav .left ul li{
+	margin-left:21px;
+	margin-right:9px;
+}
+.nav .left ul li{
+	padding-top:5px;
+	height:26px;
+	line-height:26px;
+	padding-bottom:5px;
+	border-bottom:1px dotted #9d9d9d;
+	position: relative;
+}
+.nav .left ul li a{
+	font-size:12px;
+	display:block;
+	color:#898989;
+	font-weight:bold;
+	background:url(../images/_06.jpg) no-repeat 7px center;
+	text-indent:24px;
+}
+.nav .left ul li a:hover{
+	color:#ffeeeb;
+	background:url(../images/_05.jpg) no-repeat 155px center, url(../images/_02.jpg) no-repeat 7px center  #ba1a22;
+	width:178px;
+	position: absolute;
+	left: -7px;
+	top: 6px;
+}
+.nav .right{
+	width:790px;
+	float:left;
+}
+.nav .right h3{
+	height:42px;
+	font-size:16px;
+	position:relative;
+}
+.nav .right-up p{
+	position:absolute;
+	right:220px;
+	top:370px;
+	font-size:12px;
+}
+.nav .right-up p a{
+	color:#000000;
+}
+.nav .right-up p a:hover{
+	color:#545454;
+	text-decoration: underline;
+}
+.nav .right-up{
+	margin-bottom:30px;
+}
+.nav h3{
+	background:url(../images/_07.jpg)repeat-x;
+}
+.nav .right-down .right-down-left{
+	width:345px;
+	padding-left:17px;
+	padding-right:37px;
+	float:left;
+}
+.nav .right-down .right-down-left h2{
+	color:#b5241f;
+	font-size:19px;
+	border-bottom:1px dotted #9d9d9d;
+	height:35px;
+	line-height:35px;
+}
+.nav .right-down .right-down-left p{
+	padding-top:12px;
+	font-family: 黑体;
+	font-size: 11px;
+}
